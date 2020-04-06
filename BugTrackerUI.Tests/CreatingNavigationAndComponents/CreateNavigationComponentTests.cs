@@ -1,13 +1,14 @@
-﻿using HtmlAgilityPack;
+﻿using BugTrackerUI.Tests;
+using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Xunit;
 
-namespace BugTrackerUI.Tests.CreatingNavigationAndComponents
+namespace M2_BugTrackerUI.Tests.CreatingNavigationAndComponents
 {
-    public class CreateNavigationComponentTests
+    public class M2_01_CreateNavigationComponentTests
     {
         [Fact(DisplayName = "Create the Navigation Component @create-navigation-component")]
         public void CreateNavigationComponentTest()

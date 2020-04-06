@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using Xunit;
+using Microsoft.AspNetCore.Components;
 
 namespace BugTrackerUI.Tests
 {
@@ -11,11 +14,20 @@ namespace BugTrackerUI.Tests
 
         public static Type GetClassType(string fullName)
         {
-            return (from assembly in AppDomain.CurrentDomain.GetAssemblies()
-                    where assembly.FullName.StartsWith(_projectName)
-                    from type in assembly.GetTypes()
-                    where type.FullName == fullName
-                    select type).FirstOrDefault();
+            Type parentType = typeof(ComponentBase);
+            Assembly assembly = Assembly.Load("BugTrackerUI");
+            Type[] types = assembly.GetTypes();
+
+            IEnumerable<Type> subclasses = types.Where(t => t.IsSubclassOf(parentType));
+
+            var found = subclasses.FirstOrDefault(x => x.FullName == fullName);
+
+            if(found == null)
+            {
+                found = assembly.GetTypes().FirstOrDefault(x => x.FullName == fullName);
+            }
+
+            return found;
         }
 
         public static string GetRootString()

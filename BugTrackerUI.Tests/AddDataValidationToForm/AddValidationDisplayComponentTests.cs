@@ -3,15 +3,16 @@ using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Xunit;
 
-namespace M2_BugTrackerUI.Tests.CreatingNavigationAndComponents
+namespace M5_BugTrackerUI.Tests.AddDataValidationToForm
 {
-    public class M2_07_AddNewBugRouteTests
+    public class M5_04_AddValidationSummaryComponentTests
     {
-        [Fact(DisplayName = "Add the NewBug Friendly Route @add-newbug-friendly-route")]
-        public void AddNewBugRouteTest()
+        [Fact(DisplayName = "Add the Validation Display Component @add-validation-display-component")]
+        public void AddValidationSummaryComponentTest()
         {
             var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
                 + Path.DirectorySeparatorChar + "Pages"
@@ -22,8 +23,10 @@ namespace M2_BugTrackerUI.Tests.CreatingNavigationAndComponents
             var doc = new HtmlDocument();
             doc.Load(filePath);
 
-            Assert.True(doc.DocumentNode.InnerText.Contains("@page \"/new-bug\""),
-                "The NewBug component should contain the `@page` directive with a value of \"/new-bug\"");
+            var validationSummary = doc.DocumentNode.Descendants("ValidationSummary")?.FirstOrDefault();
+
+            Assert.True(validationSummary != null,
+                "`NewBug.razor` should contain navigation `ValidationSummary` component.");
         }
     }
 }
