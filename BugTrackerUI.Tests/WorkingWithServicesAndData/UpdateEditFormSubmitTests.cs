@@ -25,7 +25,7 @@ namespace M3_BugTrackerUI.Tests.CreatingNewBugForm
 
             var editForm = doc.DocumentNode.Descendants("EditForm")?.FirstOrDefault();
 
-            Assert.True(editForm != null && editForm.Attributes["OnValidSubmit"]?.Value == "@HandleValidSubmit",
+            Assert.True(editForm != null && editForm.Attributes["OnValidSubmit"]?.Value == "HandleValidSubmit",
                 @"The `NewBug` component element should contain an `EditForm` component with with a `OnValidSubmit` attribute set to `@HandleValidSubmit`.");
         }
     }

@@ -25,15 +25,18 @@ namespace M3_BugTrackerUI.Tests.CreatingNewBugForm
 
             var editForm = doc.DocumentNode.Descendants("EditForm")?.FirstOrDefault();
 
-            var labels = new[] { "Title", "Description", "Priority" };
-
-            foreach (var label in labels)
+            if (editForm != null)
             {
                 var parsedInput = editForm.Descendants("button")
-                    .FirstOrDefault(x => x.Attributes["type"]?.Value == $"submit");
+                                .FirstOrDefault(x => x.Attributes["type"]?.Value == $"submit");
 
-                Assert.True(parsedInput != null && parsedInput.InnerText == "Add Bug", 
-                    $"NewBug.razor should contain a button with attributes `type=\"submit\"` and the text `\"Add Bug\"`.");
+                Assert.True(parsedInput != null && parsedInput.InnerText == "Add Bug",
+                    $"The EditForm Component should contain a button with attributes `type=\"submit\"` and the text `\"Add Bug\"`.");
+            }
+            else
+            {
+                Assert.True(editForm != null,
+                @"The `NewBug` component element should contain an `EditForm` component with with a `Model` attribute set to `AddBug`.");
             }
         }
     }

@@ -25,22 +25,37 @@ namespace M3_BugTrackerUI.Tests.CreatingNewBugForm
 
             var editForm = doc.DocumentNode.Descendants("EditForm")?.FirstOrDefault();
 
-            var labels = new[] { "Title", "Description", "Priority" };
-
-            foreach (var label in labels)
+            if (editForm != null)
             {
-                var parsedInput = editForm.Descendants("InputText")
-                    .FirstOrDefault(x => x.Attributes["placeholder"]?.Value == $"Enter {label}" && x.Attributes["@bind-Value"]?.Value == $"@AddBug.{label}");
+                var labels = new[] { "Title", "Description", "Priority" };
 
-                if(parsedInput == null)
+                foreach (var label in labels)
                 {
-                    parsedInput = editForm.Descendants("InputNumber")
+                    var inputType = "Text";
+                    var parsedInput = editForm.Descendants("InputText")
                         .FirstOrDefault(x => x.Attributes["placeholder"]?.Value == $"Enter {label}" && x.Attributes["@bind-Value"]?.Value == $"@AddBug.{label}");
 
+                    if (parsedInput == null)
+                    {
+                        parsedInput = editForm.Descendants("InputNumber")
+                            .FirstOrDefault(x => x.Attributes["placeholder"]?.Value == $"Enter {label}" && x.Attributes["@bind-Value"]?.Value == $"@AddBug.{label}");
+
+                        if (parsedInput != null)
+                        {
+                            inputType = "Number";
+                        }
+                    }
+
+                    Assert.True(parsedInput != null,
+                        $"The EditForm component should contain an Input{inputType} component with attributes `placeholder=\"Enter {label}\"` and `@bind-value=\"@AddBug.{label}\"`");
                 }
-                Assert.True(parsedInput != null, 
-                    $"NewBug.razor should contain an input with attributes `placeholder=\"Enter {label}\"` and `@bind-value=\"@AddBug.{label}\"`");
             }
+            else
+            {
+                Assert.True(editForm != null,
+                @"The `NewBug` component should contain an `EditForm` component with with a `Model` attribute set to `AddBug`.");
+            }
+
         }
     }
 }

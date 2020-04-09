@@ -26,7 +26,7 @@ namespace M3_BugTrackerUI.Tests.CreatingNewBugForm
             var h2 = doc.DocumentNode.Descendants("h3")?.FirstOrDefault();
 
             Assert.True(h2 != null && h2.InnerText.Contains("Add New Bug", StringComparison.OrdinalIgnoreCase), 
-                "`NewBug.razor` should contain an `h3` tag with the text `\"Add new Bug\".");
+                "`NewBug.razor` should contain an `h3` tag with the text `\"Add New Bug\".`");
         }
     }
 }

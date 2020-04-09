@@ -14,7 +14,7 @@ namespace M4_BugTrackerUI.Tests.WorkingWithServicesAndData
 {
     public class M4_04_PersistNewBugTests
     {
-        [Fact(DisplayName = "Create the NewBug Component @create-newbug-component")]
+        [Fact(DisplayName = "Persist the new bug @persist-new-bug")]
         public void PersistNewBugTest()
         {
             var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
