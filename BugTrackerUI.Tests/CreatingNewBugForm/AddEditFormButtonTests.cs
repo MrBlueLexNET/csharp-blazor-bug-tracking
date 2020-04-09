@@ -11,7 +11,7 @@ namespace M3_BugTrackerUI.Tests.CreatingNewBugForm
 {
     public class M3_05_AddEditFormButtonTests
     {
-        [Fact(DisplayName = "Add the Edit Form Input Components @add-editform-inputs")]
+        [Fact(DisplayName = "Add the Edit Form Button @add-editform-button")]
         public void AddEditFormButtonTest()
         {
             var filePath = TestHelpers.GetRootString() + "BugTrackerUI"

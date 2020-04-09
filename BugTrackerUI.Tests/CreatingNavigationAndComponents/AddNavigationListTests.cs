@@ -26,7 +26,7 @@ namespace M2_BugTrackerUI.Tests.CreatingNavigationAndComponents
             var ulTag = doc.DocumentNode.Descendants("ul")?.FirstOrDefault();
 
             Assert.True(ulTag != null && ulTag.Descendants("li") != null && ulTag.Descendants("li").Count() == 2,
-                "`LeftNav.razor` should contain navigation `ul` element with two child `li` elements.");
+                "`LeftNav.razor` should contain a `ul` element with two child `li` elements.");
         }
     }
 }

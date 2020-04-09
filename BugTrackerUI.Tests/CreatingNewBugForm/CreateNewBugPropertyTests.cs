@@ -12,7 +12,7 @@ namespace M3_BugTrackerUI.Tests.CreatingNewBugForm
 {
     public class M3_02_CreateNewBugPropertyTests
     {
-        [Fact(DisplayName = "Create the NewBug Component @create-newbug-component")]
+        [Fact(DisplayName = "Create the AddBug Property @create-addbug-property")]
         public void CreateNewBugPropertyTest()
         {
             var filePath = TestHelpers.GetRootString() + "BugTrackerUI"

@@ -14,7 +14,7 @@ namespace M4_BugTrackerUI.Tests.WorkingWithServicesAndData
 {
     public class M4_06_RedirectToHomePageTests
     {
-        [Fact(DisplayName = "Create the NewBug Component @create-newbug-component")]
+        [Fact(DisplayName = "Redirect to the home page @redirect-to-home-page")]
         public void RedirectToHomePageTest()
         {
             var filePath = TestHelpers.GetRootString() + "BugTrackerUI"

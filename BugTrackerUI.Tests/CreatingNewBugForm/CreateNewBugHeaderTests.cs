@@ -11,7 +11,7 @@ namespace M3_BugTrackerUI.Tests.CreatingNewBugForm
 {
     public class M3_01_CreateNewBugHeaderTests
     {
-        [Fact(DisplayName = "Create the NewBug Component @create-newbug-component")]
+        [Fact(DisplayName = "Create the NewBug Header @create-newbug-header")]
         public void CreateNewBugHeaderTest()
         {
             var filePath = TestHelpers.GetRootString() + "BugTrackerUI"

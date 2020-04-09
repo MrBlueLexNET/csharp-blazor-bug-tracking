@@ -14,7 +14,7 @@ namespace M4_BugTrackerUI.Tests.WorkingWithServicesAndData
 {
     public class M4_03_CreateFormSubmissionHandlerTests
     {
-        [Fact(DisplayName = "Create the NewBug Component @create-newbug-component")]
+        [Fact(DisplayName = "Create the Form Handler @create-form-handler")]
         public void CreateFormSubmissionHandlerTest()
         {
             var filePath = TestHelpers.GetRootString() + "BugTrackerUI"

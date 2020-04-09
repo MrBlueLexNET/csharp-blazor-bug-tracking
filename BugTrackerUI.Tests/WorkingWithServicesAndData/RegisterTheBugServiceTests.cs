@@ -11,7 +11,7 @@ namespace M4_BugTrackerUI.Tests.WorkingWithServicesAndData
 {
     public class M4_01_RegisterTheBugServiceTests
     {
-        [Fact(DisplayName = "Add the Edit Form Input Components @add-editform-inputs")]
+        [Fact(DisplayName = "Register the BugService @register-bug-service")]
         public void RegisterTheBugServiceTest()
         {
             var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
