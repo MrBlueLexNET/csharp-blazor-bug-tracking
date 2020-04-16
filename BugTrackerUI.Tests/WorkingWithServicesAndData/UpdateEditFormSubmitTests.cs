@@ -7,7 +7,7 @@ using System.Text;
 using Xunit;
 using BugTrackerUI.Tests;
 
-namespace M3_BugTrackerUI.Tests.CreatingNewBugForm
+namespace M3_BugTrackerUI.Tests.WorkingWithServicesAndData
 {
     public class M4_07_UpdateEditFormSubmitTests
     {
