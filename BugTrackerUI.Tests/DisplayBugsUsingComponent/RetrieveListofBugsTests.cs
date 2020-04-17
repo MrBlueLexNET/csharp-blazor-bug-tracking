@@ -30,9 +30,9 @@ namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
                 file = streamReader.ReadToEnd();
             }
 
-            var pattern = @"\s*?protected\s*?override\s*?async\s*?Task\s*?OnInitializedAsync[(][)]\s*?[{]\s*?Bugs\s*?=\s*?BugService.GetBugs[(][)];\s*?}\s*?";
+            var pattern = @"\s*?protected\s*?override\s*?void\s*?\s*?OnInitialized[(][)]\s*?[{]\s*?Bugs\s*?=\s*?BugService.GetBugs[(][)];\s*?}\s*?";
             var rgx = new Regex(pattern);
-            Assert.True(rgx.IsMatch(file), "`BugList.razor` was found, but does not contain a `protected async` method called `OnInitializedAsync` that retrieves the list of Bugs.");
+            Assert.True(rgx.IsMatch(file), "`BugList.razor` was found, but does not contain a `protected void` method called `OnInitialized` that retrieves the list of Bugs.");
         }
     }
 }

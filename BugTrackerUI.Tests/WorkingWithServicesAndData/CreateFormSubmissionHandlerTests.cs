@@ -29,8 +29,8 @@ namespace M4_BugTrackerUI.Tests.WorkingWithServicesAndData
                 "HandleValidSubmit",
                 BindingFlags.Instance | BindingFlags.NonPublic);
 
-            Assert.True( method != null && method.IsFamily && method.ReturnType == typeof(Task),
-                "`NewBug.razor` should contain a `protected async` method called `HandleValidSubmit` that returns a type of `Task`.");
+            Assert.True(method != null && method.IsFamily && method.ReturnType == typeof(void),
+                "`NewBug.razor` should contain a `protected` method called `HandleValidSubmit` that returns a type of `Void`.");
         }
     }
 }
