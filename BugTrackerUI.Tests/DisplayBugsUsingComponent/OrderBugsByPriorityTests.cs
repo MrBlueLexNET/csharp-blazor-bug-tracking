@@ -13,10 +13,10 @@ using System.Text.RegularExpressions;
 
 namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
 {
-    public class M6_06_RetrieveListofBugsTests
+    public class M6_06_OrderBugsByPriorityTests
     {
-        [Fact(DisplayName = "Retrieve list of bugs @retrieve-buglist")]
-        public void RetrieveListofBugsTest()
+        [Fact(DisplayName = "Order the list of bugs by priority @order-buglist")]
+        public void OrderBugsByPriorityTest()
         {
             var filePath = TestHelpers.GetRootString() + "BugTrackerUI"
                 + Path.DirectorySeparatorChar + "Components"
@@ -30,11 +30,8 @@ namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
                 file = streamReader.ReadToEnd();
             }
 
-            var pattern = @"\s*?protected\s*?override\s*?void\s*?\s*?OnInitialized[(][)]\s*?[{]\s*?Bugs\s*?=\s*?BugService.GetBugs[(][)].OrderBy[(]x => x.Priority[)].ToList[(][)];\s*?}\s*?";
-            var pattern2 = @"\s*?protected\s*?override\s*?void\s*?\s*?OnInitialized[(][)]\s*?[{]\s*?Bugs\s*?=\s*?BugService.GetBugs[(][)];\s*?}\s*?";
-            var rgx = new Regex(pattern);
-            var rgx2 = new Regex(pattern2);
-            Assert.True(rgx.IsMatch(file) || rgx2.IsMatch(file), "`BugList.razor` was found, but does not contain a `protected void` method called `OnInitialized` that retrieves the list of Bugs.");
+            Assert.True(file.Contains("BugService.GetBugs().OrderBy(x => x.Priority).ToList()"),
+                "`BugList.razor` did not contain a call to `OrderBy` on the list of Bugs.");
         }
     }
 }
