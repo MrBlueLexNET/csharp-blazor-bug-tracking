@@ -13,7 +13,7 @@ using System.Text.RegularExpressions;
 
 namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
 {
-    public class M6_06_OrderBugsByPriorityTests
+    public class M6_05_OrderBugsByPriorityTests
     {
         [Fact(DisplayName = "Order the list of bugs by priority @order-buglist")]
         public void OrderBugsByPriorityTest()

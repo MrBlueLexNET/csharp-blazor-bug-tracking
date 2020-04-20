@@ -10,7 +10,7 @@ using Xunit;
 
 namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
 {
-    public class M6_05_DisplayBugsInTableTests
+    public class M6_06_DisplayBugsInTableTests
     {
         [Fact(DisplayName = "Display the List of Bugs in a Table @display-buglist-table")]
         public void DisplayBugsInTableTest()

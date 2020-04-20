@@ -9,7 +9,7 @@ using Xunit;
 
 namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
 {
-    public class M6_06_AddBugListToHomeTests
+    public class M6_07_AddBugListToHomeTests
     {
         [Fact(DisplayName = "Add the BugList component to Index @add-buglist-to-index")]
         public void AddNavigationToLayoutTest()

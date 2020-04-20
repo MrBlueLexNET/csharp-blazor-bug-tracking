@@ -13,7 +13,7 @@ using System.Text.RegularExpressions;
 
 namespace M6_BugTrackerUI.Tests.DisplayBugsUsingComponent
 {
-    public class M6_06_RetrieveListofBugsTests
+    public class M6_04_RetrieveListofBugsTests
     {
         [Fact(DisplayName = "Retrieve list of bugs @retrieve-buglist")]
         public void RetrieveListofBugsTest()
