@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29311.281
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BugTrackerUI", "BugTrackerUI\BugTrackerUI.csproj", "{45A48647-C5CD-4BB4-AF04-2FDD5DEE4597}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugTrackerUI.Tests", "BugTrackerUI.Tests\BugTrackerUI.Tests.csproj", "{25E352A8-4B94-4130-A4F0-331CFD3DA00E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BugTrackerUI.Tests", "BugTrackerUI.Tests\BugTrackerUI.Tests.csproj", "{25E352A8-4B94-4130-A4F0-331CFD3DA00E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
